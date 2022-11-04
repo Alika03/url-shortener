@@ -1,0 +1,61 @@
+definitions:
+  add.DTO:
+    properties:
+      url:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: API Server for TodoList Application
+  title: Todo App API
+  version: 1.0m
+paths:
+  /{code}:
+    get:
+      consumes:
+      - application/json
+      description: get url by code
+      operationId: get-url
+      parameters:
+      - description: url info
+        in: path
+        name: code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+        "409":
+          description: Conflict
+      tags:
+      - get
+  /add:
+    post:
+      consumes:
+      - application/json
+      description: generate url
+      operationId: add-url
+      parameters:
+      - description: url info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/add.DTO'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+        "409":
+          description: Conflict
+      tags:
+      - add
+swagger: "2.0"

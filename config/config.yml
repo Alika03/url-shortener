@@ -1,0 +1,14 @@
+server:
+  host: "localhost"
+  port: 8080
+db_params:
+  port: 5432
+  host: "localhost"
+  username: "app"
+  password: "secret"
+  db: "app"
+cache_db_params:
+  port: 6379
+  host: "localhost"
+  password: "secret"
+  db: 0
