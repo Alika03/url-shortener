@@ -7,8 +7,8 @@ definitions:
 host: localhost:8080
 info:
   contact: {}
-  description: API Server for TodoList Application
-  title: Todo App API
+  description: API Server for Url-shortener Application
+  title: Url-shortener App API
   version: 1.0m
 paths:
   /{code}:

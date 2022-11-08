@@ -10,9 +10,9 @@ func init() {
 	bootstrap.Migrate("./infrastructure/db/migration/")
 }
 
-// @title Todo App API
+// @title Url-shortener App API
 // @version 1.0m
-// @description API Server for TodoList Application
+// @description API Server for Url-shortener Application
 
 // @host localhost:8080
 

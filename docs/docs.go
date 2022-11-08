@@ -107,8 +107,8 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "localhost:8080",
 	BasePath:         "",
 	Schemes:          []string{},
-	Title:            "Todo App API",
-	Description:      "API Server for TodoList Application",
+	Title:            "Url-shortener App API",
+	Description:      "API Server for Url-shortener Application",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 }
