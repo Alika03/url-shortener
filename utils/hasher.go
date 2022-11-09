@@ -1,8 +1,12 @@
 package utils
 
 import (
+	"crypto/sha256"
 	"errors"
+	"fmt"
+	"github.com/btcsuite/btcutil/base58"
 	"math"
+	"math/big"
 	"math/rand"
 	"strings"
 	"time"
@@ -48,4 +52,21 @@ func Decode(encoded string) (uint64, error) {
 	}
 
 	return number, nil
+}
+
+func sha256Of(input string) []byte {
+	algorithm := sha256.New()
+	algorithm.Write([]byte(input))
+	return algorithm.Sum(nil)
+}
+
+func base58Encoded(input []byte) string {
+	return base58.Encode(input)
+}
+
+func GenerateShortLink(urlLink string, userId string) string {
+	urlHashBytes := sha256Of(urlLink + userId)
+	generateNumber := new(big.Int).SetBytes(urlHashBytes).Uint64()
+	finalString := base58Encoded([]byte(fmt.Sprintf("%d", generateNumber)))
+	return finalString[:10]
 }
